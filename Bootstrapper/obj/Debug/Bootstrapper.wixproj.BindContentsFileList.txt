@@ -1,0 +1,4 @@
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\SetupProjectWIX\bin\Debug\SetupProjectWIX.msi
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\Bootstrapper\dotNetFx40_Full_x86_x64.exe
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\Bootstrapper\NDP40-KB2468871-v2-x86.exe
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\SetupProjectWIX\bin\Debug\cab1.cab

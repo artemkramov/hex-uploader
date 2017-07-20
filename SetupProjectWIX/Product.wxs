@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?define ProductName = "ECR HEX uploader" ?>
+<?define ProductManufacturer = "HelpMicroHex" ?>
+<?define ProductCode = "32907f06-6d4d-11e7-907b-a6006ad3dba0" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="SetupProjectWIX" Language="1033" Version="1.0.0.1" Manufacturer="$(var.ProductManufacturer)" UpgradeCode="32907f06-6d4d-11e7-907b-a6006ad3dba0">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="SetupProjectWIX" Level="1">
+        
+        <ComponentGroupRef Id="ProductComponents" />
+        <ComponentRef Id="ApplicationShortcutDesktop" />
+		</Feature>
+    
+  </Product>
+  
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      
+      <!-- Add shortcut to the Desktop -->
+      <Directory Id="DesktopFolder" Name="Desktop">
+        <Component Id="ApplicationShortcutDesktop" Guid="*">
+            <Shortcut Id="ApplicationDesktopShortcut"
+                Name="$(var.ProductName)"
+                Description="$(var.ProductName) - $(var.ProductManufacturer)"
+                Target="[INSTALLFOLDER]ECRHexUpload.exe" 
+                Icon="icon.ico"
+                WorkingDirectory="INSTALLFOLDER"/>
+            <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+            <RegistryValue
+                Root="HKCU"
+                Key="Software/$(var.ProductName)"
+                Name="installed"
+                Type="integer"
+                Value="1"
+                KeyPath="yes"/>
+        </Component>
+    </Directory>
+      
+      
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="$(var.ProductManufacturer)" />
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuFolderData" Name="$(var.ProductManufacturer)">
+           
+        </Directory>
+         
+      </Directory>
+		</Directory>
+  
+	</Fragment>
+  
+  
+
+	<Fragment>
+    
+    <Icon Id="icon.ico" SourceFile="$(var.ECR.TargetDir)icon.ico" />
+    
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentGroupRef Id="ConfigurationUtilityComponents"/>
+			<Component Id="ProductComponent" Guid="$(var.ProductCode)">
+        <CreateFolder Directory="ProgramMenuFolderData" />
+        <File Source="$(var.ECR.TargetPath)" />
+        <Shortcut Id="ECRShortcut" Name="$(var.ProductName)" Directory="ProgramMenuFolderData" Advertise="yes" Icon="icon.ico" />
+                
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+  
+  
+  
+</Wix>

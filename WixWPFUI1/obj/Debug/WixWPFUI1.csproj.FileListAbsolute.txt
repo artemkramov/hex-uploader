@@ -1,0 +1,14 @@
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\WixWPFUI1.dll
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\WixWPFUI1.pdb
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\BootstrapperCore.dll
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\WixWPF.dll
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\BootstrapperCore.xml
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\WixWPF.pdb
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\bin\Debug\WixWPF.xml
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\WixWPFUI1.csprojResolveAssemblyReference.cache
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\MainWindow.baml
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\MainWindow.g.cs
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\WixWPFUI1_MarkupCompile.cache
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\WixWPFUI1.g.resources
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\WixWPFUI1.dll
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\WixWPFUI1\obj\Debug\WixWPFUI1.pdb

@@ -1,0 +1,11 @@
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\SetupProjectWIX\bin\Debug\SetupProjectWIX.msi
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\SetupProjectWIX\bin\Debug\SetupProjectWIX.wixpdb
+obj\Debug\OutputFiles.wixobj
+obj\Debug\Product.wixobj
+obj\Debug\SetupProjectWIX.wixproj.BindContentsFileListnull.txt
+obj\Debug\SetupProjectWIX.wixproj.BindOutputsFileListnull.txt
+obj\Debug\SetupProjectWIX.wixproj.BindBuiltOutputsFileListnull.txt
+E:\DATA(G)\web_ecr_uk\DesktopProgram\ECR\SetupProjectWIX\bin\Debug\cab1.cab
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\SetupProjectWIX\bin\Debug\cab1.cab
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\SetupProjectWIX\bin\Debug\SetupProjectWIX.msi
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\SetupProjectWIX\bin\Debug\SetupProjectWIX.wixpdb

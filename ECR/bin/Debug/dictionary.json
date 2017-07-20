@@ -1,0 +1,17 @@
+﻿{
+	"In work...": "В роботі...",
+	"Information": "Інформація",
+	"Error": "Помилка",
+	"Connected successfully": "З'єднання відбулося успішно",
+	"Response status code does not indicate success: 401 (Unauthorized).": "Невірний логін чи пароль: 401 (Unauthorized).",
+	"An error occurred while sending the request.": "Сталася помилка при відправленні запиту. Перевірте правильність адреси та доступність каси.",
+	"Invalid URI: The format of the URI could not be determined.": "Неправильний формат адреси.", 
+	"This field is required": "Поле необхідне для заповнення",
+	"The field must be a number": "Поле має містити число",
+	"Without taxes": "Без ПДВ",
+	"Incorrect field (must be like 10)": "Некоректне значення поля",
+	"The field must be a positive integer number": "Значення поля має бути цілим додатнім числом",
+	"Hex file was uploaded successfully": "HEX-файл успішно завантажено до пристрою",
+	"Invalid HEX format": "Невірний формат HEX-файлу",
+	"Flash is starting...": "Перепрошивка розпочата..."
+}

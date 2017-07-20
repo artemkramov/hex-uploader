@@ -1,0 +1,2 @@
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\Bootstrapper\bin\Debug\Bootstrapper.exe
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\Bootstrapper\bin\Debug\Bootstrapper.wixpdb
