@@ -7,21 +7,41 @@ using System.Windows.Forms;
 
 namespace ECR.Models
 {
+
+    /// <summary>
+    /// Class for operating with HEX file
+    /// </summary>
     class IntelHex
     {
 
+        /// <summary>
+        /// Count of the informative header lines
+        /// </summary>
         const int HEADER_LINES_COUNT = 3;
 
+        /// <summary>
+        /// Collection of hex lines
+        /// </summary>
         private List<string> lines = new List<string>();
 
+        /// <summary>
+        /// Informative headers
+        /// </summary>
         private IntelHexHeaders headers = new IntelHexHeaders();
 
+        /// <summary>
+        /// Property for headers
+        /// </summary>
         public IntelHexHeaders Headers
         {
             private set { this.headers = value; }
             get { return this.headers; }
         }
 
+        /// <summary>
+        /// Load information from the input stream
+        /// </summary>
+        /// <param name="inputStream"></param>
         public void Load(Stream inputStream)
         {
             this.Clear();
@@ -33,12 +53,18 @@ namespace ECR.Models
             }
         }
 
+        /// <summary>
+        /// Clear all information about HEX file
+        /// </summary>
         public void Clear()
         {
             this.lines.Clear();
             this.headers.Clear();
         }
 
+        /// <summary>
+        /// Parse header lines
+        /// </summary>
         public void ParseHeaders()
         {
             if (lines.Count > HEADER_LINES_COUNT)
@@ -50,6 +76,11 @@ namespace ECR.Models
             }
         }
 
+        /// <summary>
+        /// Convert HEX string to array of bytes
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
         public static byte[] StringToByteArray(string hex)
         {
             return Enumerable.Range(0, hex.Length)
@@ -58,6 +89,10 @@ namespace ECR.Models
                              .ToArray();
         }
 
+        /// <summary>
+        /// Convert HEX data to binary view
+        /// </summary>
+        /// <returns></returns>
         public byte[] ToBinary()
         {
             List<string> rows = new List<string>(this.lines);
@@ -94,31 +129,58 @@ namespace ECR.Models
 
     }
 
+    /// <summary>
+    /// Class which describes the informative headers
+    /// </summary>
     class IntelHexHeaders
     {
 
+        /// <summary>
+        /// Version of the firmware
+        /// </summary>
         private string version;
+
+        /// <summary>
+        /// Firmware GUID
+        /// </summary>
         private string firmwareGUID;
+
+        /// <summary>
+        /// Description of the firmware
+        /// </summary>
         private string description;
 
+        /// <summary>
+        /// Property for the field 'version'
+        /// </summary>
         public string Version
         {
             private set { this.version = value; }
             get { return version; }
         }
 
+        /// <summary>
+        /// Property for the field 'firmwareGUID'
+        /// </summary>
         public string FirmwareGUID
         {
             private set { this.firmwareGUID = value; }
             get { return firmwareGUID; }
         }
 
+        /// <summary>
+        /// Property for the field 'description'
+        /// </summary>
         public string Description
         {
             private set { this.description = value; }
             get { return description; }
         }
 
+        /// <summary>
+        /// Parse line for the header searching
+        /// </summary>
+        /// <param name="headerLine"></param>
         public void ParseLine(string headerLine)
         {
             /**
@@ -144,6 +206,9 @@ namespace ECR.Models
             }
         }
 
+        /// <summary>
+        /// Clear all header information
+        /// </summary>
         public void Clear()
         {
             this.Version = "";

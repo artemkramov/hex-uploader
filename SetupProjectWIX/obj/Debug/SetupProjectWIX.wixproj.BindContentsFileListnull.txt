@@ -12,6 +12,7 @@ E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\Microsoft.Threading.Task
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\Newtonsoft.Json.xml
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\logo.ico
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\Microsoft.Threading.Tasks.Extensions.dll
+E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\ECRHexUpload.vshost.exe.manifest
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\ECR.vshost.exe.manifest
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\System.IO.xml
 E:\DATA(G)\web_ecr_uk\HexUploader V1\ECR\ECR\bin\Debug\\System.Runtime.xml

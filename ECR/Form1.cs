@@ -283,23 +283,22 @@ namespace ECR
         private async void btnUploadHex_Click(object sender, EventArgs e)
         {
             LoadingButton(btnUploadHex);
-            FirmwareInfo firmwareInfo = new FirmwareInfo();
-            firmwareInfo.Set("Version", intelHex.Headers.Version);
-            firmwareInfo.Set("Description", intelHex.Headers.Description);
-            firmwareInfo.Set("FirmwareGUID", intelHex.Headers.FirmwareGUID);
-            Task<dynamic> task = Task.Factory.StartNew(() => device.SendFirmwareInfo(firmwareInfo));
-            dynamic responseFirmwareInfo = await task;
-            
-            ResponseFirmware response = device.ParseFirmwareInfoResponse(responseFirmwareInfo);
-            if (response.IsSuccess)
+            try
             {
-                panelUploadProgress.Visible = true;
-                try
+                byte[] buffer = this.intelHex.ToBinary();
+                FirmwareInfo firmwareInfo = new FirmwareInfo();
+                firmwareInfo.Set("Version", intelHex.Headers.Version);
+                firmwareInfo.Set("Description", intelHex.Headers.Description);
+                firmwareInfo.Set("FirmwareGUID", intelHex.Headers.FirmwareGUID);
+                Task<dynamic> task = Task.Factory.StartNew(() => device.SendFirmwareInfo(firmwareInfo));
+                dynamic responseFirmwareInfo = await task;
+
+                ResponseFirmware response = device.ParseFirmwareInfoResponse(responseFirmwareInfo);
+                if (response.IsSuccess)
                 {
-                    byte[] buffer = this.intelHex.ToBinary();
+                    panelUploadProgress.Visible = true;
                     Task<dynamic> taskSend = Task.Factory.StartNew(() => device.SendHexFile(buffer));
                     dynamic responseFirmwareUpload = await taskSend;
-                    
                     ResetButton(btnUploadHex);
                     panelUploadProgress.Visible = false;
                     response = device.ParseFirmwareUploadResponse(responseFirmwareUpload);
@@ -312,19 +311,21 @@ namespace ECR
                         if (response.Error.Length > 0)
                             ShowErrorMessage(response.Error);
                     }
+
+
                 }
-                catch (IntelHexParserException)
+                else
                 {
-                    panelUploadProgress.Visible = false;
                     ResetButton(btnUploadHex);
-                    ShowErrorMessage(ECRDictionary.GetTranslation("Invalid HEX format"));
+                    if (response.Error.Length > 0)
+                        ShowErrorMessage(response.Error);
                 }
             }
-            else
+            catch (IntelHexParserException)
             {
+                panelUploadProgress.Visible = false;
                 ResetButton(btnUploadHex);
-                if (response.Error.Length > 0)
-                    ShowErrorMessage(response.Error);
+                ShowErrorMessage(ECRDictionary.GetTranslation("Invalid HEX format"));
             }
         }
 

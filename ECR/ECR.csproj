@@ -134,7 +134,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ComboboxItem.cs" />
-    <Compile Include="Models\Deferred.cs" />
     <Compile Include="Models\Dictionary.cs" />
     <Compile Include="Models\ECRDevice.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -144,9 +143,6 @@
     <Compile Include="Models\HttpClientInstance.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\IntelHex.cs" />
-    <Compile Include="Models\Payment.cs" />
-    <Compile Include="Models\PaymentGeneral.cs" />
-    <Compile Include="Models\UriBuilderExt.cs" />
     <Compile Include="Models\Validator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

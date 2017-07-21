@@ -93,51 +93,7 @@ namespace ECR.Models
             client = new HttpClient(new HttpClientHandler { Credentials = credentialCache, PreAuthenticate = true });
             client.BaseAddress = new Uri(baseAddress);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            
-            
             client.DefaultRequestHeaders.ExpectContinue = false;
-        }
-
-        public dynamic PostProduct()
-        {
-            var parameters = new Entity();
-            parameters.Set("Price", "12");
-            return RequestPost("/cgi/tbl/PLU/1", parameters, true).Result;
-        }
-
-        public dynamic PostProductCreate()
-        {
-            var collection = new EntityCollection();
-            var parameters = new Entity();
-            parameters.Set("Code", 126);
-            parameters.Set("Name", "Teset");
-            parameters.Set("Price", 12.60);
-            parameters.Set("Deposit", 0);
-            parameters.Set("Dep", 2);
-            parameters.Set("Grp", 1);
-            parameters.Set("Tax", 1);
-            parameters.Set("Qty", 0);
-            parameters.Set("Flg", 1);
-            collection.Add(parameters);
-            return RequestPost("/cgi/tbl/PLU", collection, false).Result;
-        }
-
-        public dynamic PostProductCollection()
-        {
-            var collection = new EntityCollection();
-            var entity = new Entity();
-            entity.Set("Code", 1);
-            entity.Set("Price", 13);
-            collection.Add(entity);
-            return RequestPost("/cgi/tbl/PLU", collection, true);
-        }
-
-
-
-        public dynamic GetProducts()
-        {
-            var parameters = new Dictionary<string, string>();
-            return RequestGet("/cgi/tbl/PLU", parameters, false).Result;
         }
 
         /// <summary>
@@ -277,6 +233,12 @@ namespace ECR.Models
             return retVal;
         }
 
+        /// <summary>
+        /// Send binary data to the chosen endpoint
+        /// </summary>
+        /// <param name="endPoint"></param>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
         public async Task<dynamic> RequestPostUploadFile(string endPoint, byte[] buffer)
         {
             dynamic data = null;
@@ -336,6 +298,11 @@ namespace ECR.Models
             }
         }
 
+        /// <summary>
+        /// Parse response from the server
+        /// </summary>
+        /// <param name="jsonRawData"></param>
+        /// <returns></returns>
         private dynamic ParseResponse(dynamic jsonRawData)
         {
             dynamic data = null;

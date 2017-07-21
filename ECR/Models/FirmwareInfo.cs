@@ -7,6 +7,10 @@ using System.Text;
 
 namespace ECR.Models
 {
+
+    /// <summary>
+    /// Entity for method '/cgi/fw_version'
+    /// </summary>
     class FirmwareInfo : Entity
     {
         /// <summary>

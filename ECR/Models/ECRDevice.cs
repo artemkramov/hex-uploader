@@ -18,16 +18,6 @@ namespace ECR.Models
     {
 
         /// <summary>
-        /// Constant for sending of the X report
-        /// </summary>
-        public const int X_REPORT = 10;
-
-        /// <summary>
-        /// Constant for sending of the Z report
-        /// </summary>
-        public const int Z_REPORT = 0;
-
-        /// <summary>
         /// Constant which indicates the success response during the hardware update
         /// </summary>
         private const int RESPONSE_SUCCESS = 0;
@@ -36,26 +26,6 @@ namespace ECR.Models
         /// Http client for request sending
         /// </summary>
         private HttpClientInstance httpClient = new HttpClientInstance();
-
-        /// <summary>
-        /// Payment types of device
-        /// </summary>
-        private List<ExpandoObject> paymentTypes;
-
-        /// <summary>
-        /// Departments of device
-        /// </summary>
-        private List<ExpandoObject> departments;
-
-        /// <summary>
-        /// Groups of device
-        /// </summary>
-        private List<ExpandoObject> groups;
-
-        /// <summary>
-        /// Taxes of device
-        /// </summary>
-        private List<ExpandoObject> taxes;
 
         /// <summary>
         /// Validator entity
@@ -106,29 +76,9 @@ namespace ECR.Models
         }
 
         /// <summary>
-        /// Send payment data
+        /// Upload the HEX file to the cash register
         /// </summary>
-        /// <param name="number"></param>
-        /// <param name="sum"></param>
-        /// <returns></returns>
-        public dynamic SendPayment(int number, float sum)
-        {
-            Payment payment = new Payment();
-            payment.Set("number", number);
-            payment.Set("sum", sum);
-            return httpClient.RequestPost("/cgi/chk", payment, false);
-        }
-
-        /// <summary>
-        /// Send general payment data
-        /// </summary>
-        /// <param name="payment"></param>
-        /// <returns></returns>
-        public dynamic SendPaymentGeneral(PaymentGeneral payment)
-        {
-            return httpClient.RequestPost("/cgi/chk", payment, false);
-        }
-
+        /// <param name="intelHex"></param>
         public async void UploadHexFile(IntelHex intelHex)
         {
             FirmwareInfo firmwareInfo = new FirmwareInfo();
@@ -145,6 +95,11 @@ namespace ECR.Models
             
         }
 
+        /// <summary>
+        /// Parse response from the '/cgi/fw_version' method
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public ResponseFirmware ParseFirmwareInfoResponse(dynamic response)
         {
             ResponseFirmware responseFirmware = new ResponseFirmware();
@@ -164,6 +119,11 @@ namespace ECR.Models
             return responseFirmware;
         }
 
+        /// <summary>
+        /// Parse response from the '/cgi/fw_upload' method
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public ResponseFirmware ParseFirmwareUploadResponse(dynamic response)
         {
             ResponseFirmware responseFirmware = new ResponseFirmware();
@@ -183,6 +143,11 @@ namespace ECR.Models
             return responseFirmware;
         }
 
+        /// <summary>
+        /// Parse response from the '/cgi/fw_burn' method
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
         public ResponseFirmware ParseFirmwareResponseBurn(dynamic response)
         {
             ResponseFirmware responseFirmware = new ResponseFirmware();
@@ -202,6 +167,11 @@ namespace ECR.Models
             return responseFirmware;
         }
 
+        /// <summary>
+        /// Check if the response is success or not
+        /// </summary>
+        /// <param name="field"></param>
+        /// <returns></returns>
         public ResponseFirmware CheckFirmwareFieldForError(dynamic field)
         {
             ResponseFirmware response = new ResponseFirmware();
@@ -226,6 +196,10 @@ namespace ECR.Models
             return response;
         }
 
+        /// <summary>
+        /// Show error message
+        /// </summary>
+        /// <param name="message"></param>
         public void ShowError(string message)
         {
             HttpErrorEventArgs args = new HttpErrorEventArgs();
@@ -253,11 +227,19 @@ namespace ECR.Models
             return httpClient.RequestPostUploadFile("/cgi/fw_upload", buffer).Result;
         }
 
+        /// <summary>
+        /// Flash the previously uploaded HEX file
+        /// </summary>
+        /// <returns></returns>
         public dynamic Flash()
         {
             return httpClient.RequestPost("/cgi/fw_burn", new FirmwareFlash(), false).Result;
         }
 
+        /// <summary>
+        /// Get the information about the current state of the cash register
+        /// </summary>
+        /// <returns></returns>
         public dynamic GetInformation()
         {
             var parameters = new Dictionary<string, string>();
@@ -280,7 +262,6 @@ namespace ECR.Models
         /// </summary>
         public void LoadDeviceData()
         {
-            
         }
 
         /// <summary>
@@ -324,56 +305,35 @@ namespace ECR.Models
             get { return httpClient; }
         }
 
-        /// <summary>
-        /// PaymentTypes property
-        /// </summary>
-        public List<ExpandoObject> PaymentTypes
-        {
-            private set { paymentTypes = value; }
-            get { return paymentTypes; }
-        }
-
-        /// <summary>
-        /// Departments property
-        /// </summary>
-        public List<ExpandoObject> Departments
-        {
-            private set { departments = value; }
-            get { return departments; }
-        }
-
-        /// <summary>
-        /// Groups property
-        /// </summary>
-        public List<ExpandoObject> Groups
-        {
-            private set { groups = value; }
-            get { return groups; }
-        }
-
-        /// <summary>
-        /// Taxes property
-        /// </summary>
-        public List<ExpandoObject> Taxes
-        {
-            private set { taxes = value; }
-            get { return taxes; }
-        }
-
     }
 
+    /// <summary>
+    /// Model which describes the response from the cash register
+    /// </summary>
     public class ResponseFirmware
     {
-
+        /// <summary>
+        /// Flag which indicates the the result of the operation
+        /// </summary>
         private bool isSuccess;
+
+        /// <summary>
+        /// Information about the error
+        /// </summary>
         private string error;
 
+        /// <summary>
+        /// Property for field 'isSuccess'
+        /// </summary>
         public bool IsSuccess
         {
             set { this.isSuccess = value; }
             get { return this.isSuccess; }
         }
 
+        /// <summary>
+        /// Property for field 'error'
+        /// </summary>
         public string Error
         {
             set { this.error = value; }

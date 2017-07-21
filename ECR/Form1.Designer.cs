@@ -32,18 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panelInformation = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.panelUpload = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelHexUpload = new System.Windows.Forms.Panel();
             this.panelHexInfo = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelUploadControls = new System.Windows.Forms.Panel();
             this.panelUploadProgress = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblInfoVersion = new ECR.CustomControls.CustomLabel();
             this.lblInfoVersionValue = new ECR.CustomControls.CustomLabel();
             this.lblInfoDescription = new ECR.CustomControls.CustomLabel();
@@ -73,16 +72,16 @@
             this.btnUploadHex = new ECR.CustomControls.CustomButton();
             this.tableLayoutPanel.SuspendLayout();
             this.panelInformation.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelUpload.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelHexUpload.SuspendLayout();
             this.panelHexInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelUploadControls.SuspendLayout();
             this.panelUploadProgress.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -99,7 +98,7 @@
             this.tableLayoutPanel.RowCount = 2;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1007, 341);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(914, 341);
             this.tableLayoutPanel.TabIndex = 2;
             // 
             // panelInformation
@@ -110,142 +109,14 @@
             this.panelInformation.Enabled = false;
             this.panelInformation.Location = new System.Drawing.Point(3, 178);
             this.panelInformation.Name = "panelInformation";
-            this.panelInformation.Size = new System.Drawing.Size(497, 160);
+            this.panelInformation.Size = new System.Drawing.Size(451, 160);
             this.panelInformation.TabIndex = 5;
-            // 
-            // panelLogin
-            // 
-            this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLogin.Controls.Add(this.btnConnect);
-            this.panelLogin.Controls.Add(this.textboxPassword);
-            this.panelLogin.Controls.Add(this.labelPassword);
-            this.panelLogin.Controls.Add(this.textboxUsername);
-            this.panelLogin.Controls.Add(this.labelUsername);
-            this.panelLogin.Controls.Add(this.textboxIP);
-            this.panelLogin.Controls.Add(this.labelIP);
-            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLogin.Location = new System.Drawing.Point(3, 3);
-            this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(497, 169);
-            this.panelLogin.TabIndex = 0;
-            // 
-            // panelUpload
-            // 
-            this.panelUpload.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUpload.Controls.Add(this.tableLayoutPanel1);
-            this.panelUpload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUpload.Enabled = false;
-            this.panelUpload.Location = new System.Drawing.Point(506, 3);
-            this.panelUpload.Name = "panelUpload";
-            this.tableLayoutPanel.SetRowSpan(this.panelUpload, 2);
-            this.panelUpload.Size = new System.Drawing.Size(498, 335);
-            this.panelUpload.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panelHexUpload, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelHexInfo, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panelUploadControls, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panelUploadProgress, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(490, 306);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panelHexUpload
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelHexUpload, 2);
-            this.panelHexUpload.Controls.Add(this.labelFileName);
-            this.panelHexUpload.Controls.Add(this.btnLoadFile);
-            this.panelHexUpload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelHexUpload.Location = new System.Drawing.Point(3, 3);
-            this.panelHexUpload.Name = "panelHexUpload";
-            this.panelHexUpload.Size = new System.Drawing.Size(484, 54);
-            this.panelHexUpload.TabIndex = 0;
-            // 
-            // panelHexInfo
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelHexInfo, 2);
-            this.panelHexInfo.Controls.Add(this.tableLayoutPanel2);
-            this.panelHexInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelHexInfo.Location = new System.Drawing.Point(3, 63);
-            this.panelHexInfo.Name = "panelHexInfo";
-            this.panelHexInfo.Size = new System.Drawing.Size(484, 100);
-            this.panelHexInfo.TabIndex = 1;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.13223F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.86777F));
-            this.tableLayoutPanel2.Controls.Add(this.labelFirmwareGUIDValue, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelFirmwareGUID, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelDescriptionValue, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.labelDescription, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.labelVersionValue, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.labelVersion, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(484, 100);
-            this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Visible = false;
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkRate = 0;
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
-            // 
-            // panelUploadControls
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelUploadControls, 2);
-            this.panelUploadControls.Controls.Add(this.btnFlash);
-            this.panelUploadControls.Controls.Add(this.btnUploadHex);
-            this.panelUploadControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUploadControls.Location = new System.Drawing.Point(3, 169);
-            this.panelUploadControls.Name = "panelUploadControls";
-            this.panelUploadControls.Size = new System.Drawing.Size(484, 74);
-            this.panelUploadControls.TabIndex = 9;
-            this.panelUploadControls.Visible = false;
-            // 
-            // panelUploadProgress
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panelUploadProgress, 2);
-            this.panelUploadProgress.Controls.Add(this.progressBar1);
-            this.panelUploadProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUploadProgress.Location = new System.Drawing.Point(3, 249);
-            this.panelUploadProgress.Name = "panelUploadProgress";
-            this.panelUploadProgress.Size = new System.Drawing.Size(484, 54);
-            this.panelUploadProgress.TabIndex = 10;
-            this.panelUploadProgress.Visible = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.progressBar1.Location = new System.Drawing.Point(3, 12);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(374, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.34343F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.65656F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.24242F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.75758F));
             this.tableLayoutPanel3.Controls.Add(this.lblInfoVersion, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblInfoVersionValue, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.lblInfoDescription, 0, 1);
@@ -267,6 +138,134 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(495, 153);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // panelLogin
+            // 
+            this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogin.Controls.Add(this.btnConnect);
+            this.panelLogin.Controls.Add(this.textboxPassword);
+            this.panelLogin.Controls.Add(this.labelPassword);
+            this.panelLogin.Controls.Add(this.textboxUsername);
+            this.panelLogin.Controls.Add(this.labelUsername);
+            this.panelLogin.Controls.Add(this.textboxIP);
+            this.panelLogin.Controls.Add(this.labelIP);
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLogin.Location = new System.Drawing.Point(3, 3);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(451, 169);
+            this.panelLogin.TabIndex = 0;
+            // 
+            // panelUpload
+            // 
+            this.panelUpload.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUpload.Controls.Add(this.tableLayoutPanel1);
+            this.panelUpload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUpload.Enabled = false;
+            this.panelUpload.Location = new System.Drawing.Point(460, 3);
+            this.panelUpload.Name = "panelUpload";
+            this.tableLayoutPanel.SetRowSpan(this.panelUpload, 2);
+            this.panelUpload.Size = new System.Drawing.Size(451, 335);
+            this.panelUpload.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panelHexUpload, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelHexInfo, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelUploadControls, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panelUploadProgress, 0, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(443, 306);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panelHexUpload
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panelHexUpload, 2);
+            this.panelHexUpload.Controls.Add(this.labelFileName);
+            this.panelHexUpload.Controls.Add(this.btnLoadFile);
+            this.panelHexUpload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHexUpload.Location = new System.Drawing.Point(3, 3);
+            this.panelHexUpload.Name = "panelHexUpload";
+            this.panelHexUpload.Size = new System.Drawing.Size(437, 54);
+            this.panelHexUpload.TabIndex = 0;
+            // 
+            // panelHexInfo
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panelHexInfo, 2);
+            this.panelHexInfo.Controls.Add(this.tableLayoutPanel2);
+            this.panelHexInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHexInfo.Location = new System.Drawing.Point(3, 63);
+            this.panelHexInfo.Name = "panelHexInfo";
+            this.panelHexInfo.Size = new System.Drawing.Size(437, 100);
+            this.panelHexInfo.TabIndex = 1;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.13223F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.86777F));
+            this.tableLayoutPanel2.Controls.Add(this.labelFirmwareGUIDValue, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelFirmwareGUID, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelDescriptionValue, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.labelDescription, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.labelVersionValue, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelVersion, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(437, 100);
+            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Visible = false;
+            // 
+            // panelUploadControls
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panelUploadControls, 2);
+            this.panelUploadControls.Controls.Add(this.btnFlash);
+            this.panelUploadControls.Controls.Add(this.btnUploadHex);
+            this.panelUploadControls.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUploadControls.Location = new System.Drawing.Point(3, 169);
+            this.panelUploadControls.Name = "panelUploadControls";
+            this.panelUploadControls.Size = new System.Drawing.Size(437, 74);
+            this.panelUploadControls.TabIndex = 9;
+            this.panelUploadControls.Visible = false;
+            // 
+            // panelUploadProgress
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panelUploadProgress, 2);
+            this.panelUploadProgress.Controls.Add(this.progressBar1);
+            this.panelUploadProgress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUploadProgress.Location = new System.Drawing.Point(3, 249);
+            this.panelUploadProgress.Name = "panelUploadProgress";
+            this.panelUploadProgress.Size = new System.Drawing.Size(437, 54);
+            this.panelUploadProgress.TabIndex = 10;
+            this.panelUploadProgress.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.progressBar1.Location = new System.Drawing.Point(3, 12);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(374, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 0;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 0;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // lblInfoVersion
             // 
             this.lblInfoVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -285,7 +284,7 @@
             this.lblInfoVersionValue.AutoSize = true;
             this.lblInfoVersionValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoVersionValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInfoVersionValue.Location = new System.Drawing.Point(172, 5);
+            this.lblInfoVersionValue.Location = new System.Drawing.Point(122, 5);
             this.lblInfoVersionValue.Name = "lblInfoVersionValue";
             this.lblInfoVersionValue.Size = new System.Drawing.Size(13, 20);
             this.lblInfoVersionValue.TabIndex = 9;
@@ -309,7 +308,7 @@
             this.lblInfoDescriptionValue.AutoSize = true;
             this.lblInfoDescriptionValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoDescriptionValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInfoDescriptionValue.Location = new System.Drawing.Point(172, 35);
+            this.lblInfoDescriptionValue.Location = new System.Drawing.Point(122, 35);
             this.lblInfoDescriptionValue.Name = "lblInfoDescriptionValue";
             this.lblInfoDescriptionValue.Size = new System.Drawing.Size(13, 20);
             this.lblInfoDescriptionValue.TabIndex = 11;
@@ -333,7 +332,7 @@
             this.lblInfoFirmwareGUIDValue.AutoSize = true;
             this.lblInfoFirmwareGUIDValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoFirmwareGUIDValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInfoFirmwareGUIDValue.Location = new System.Drawing.Point(172, 65);
+            this.lblInfoFirmwareGUIDValue.Location = new System.Drawing.Point(122, 65);
             this.lblInfoFirmwareGUIDValue.Name = "lblInfoFirmwareGUIDValue";
             this.lblInfoFirmwareGUIDValue.Size = new System.Drawing.Size(13, 20);
             this.lblInfoFirmwareGUIDValue.TabIndex = 13;
@@ -357,7 +356,7 @@
             this.lblInfoUploadLengthValue.AutoSize = true;
             this.lblInfoUploadLengthValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoUploadLengthValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInfoUploadLengthValue.Location = new System.Drawing.Point(172, 126);
+            this.lblInfoUploadLengthValue.Location = new System.Drawing.Point(122, 126);
             this.lblInfoUploadLengthValue.Name = "lblInfoUploadLengthValue";
             this.lblInfoUploadLengthValue.Size = new System.Drawing.Size(13, 20);
             this.lblInfoUploadLengthValue.TabIndex = 17;
@@ -369,7 +368,7 @@
             this.lblInfoHardwareGUIDValue.AutoSize = true;
             this.lblInfoHardwareGUIDValue.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoHardwareGUIDValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblInfoHardwareGUIDValue.Location = new System.Drawing.Point(172, 95);
+            this.lblInfoHardwareGUIDValue.Location = new System.Drawing.Point(122, 95);
             this.lblInfoHardwareGUIDValue.Name = "lblInfoHardwareGUIDValue";
             this.lblInfoHardwareGUIDValue.Size = new System.Drawing.Size(13, 20);
             this.lblInfoHardwareGUIDValue.TabIndex = 15;
@@ -392,7 +391,7 @@
             this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnConnect.BackColor = System.Drawing.Color.White;
             this.btnConnect.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnConnect.Location = new System.Drawing.Point(310, 28);
+            this.btnConnect.Location = new System.Drawing.Point(264, 28);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(182, 50);
             this.btnConnect.TabIndex = 6;
@@ -407,7 +406,7 @@
             this.textboxPassword.Location = new System.Drawing.Point(12, 134);
             this.textboxPassword.Name = "textboxPassword";
             this.textboxPassword.PasswordChar = '*';
-            this.textboxPassword.Size = new System.Drawing.Size(292, 26);
+            this.textboxPassword.Size = new System.Drawing.Size(246, 26);
             this.textboxPassword.TabIndex = 5;
             this.textboxPassword.Tag = "Required";
             this.textboxPassword.Text = "555555";
@@ -429,7 +428,7 @@
             this.textboxUsername.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textboxUsername.Location = new System.Drawing.Point(12, 82);
             this.textboxUsername.Name = "textboxUsername";
-            this.textboxUsername.Size = new System.Drawing.Size(292, 26);
+            this.textboxUsername.Size = new System.Drawing.Size(246, 26);
             this.textboxUsername.TabIndex = 3;
             this.textboxUsername.Tag = "Required";
             this.textboxUsername.Text = "admin";
@@ -451,7 +450,7 @@
             this.textboxIP.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textboxIP.Location = new System.Drawing.Point(12, 28);
             this.textboxIP.Name = "textboxIP";
-            this.textboxIP.Size = new System.Drawing.Size(292, 26);
+            this.textboxIP.Size = new System.Drawing.Size(246, 26);
             this.textboxIP.TabIndex = 1;
             this.textboxIP.Tag = "Required";
             this.textboxIP.Text = "http://192.168.0.130";
@@ -496,7 +495,7 @@
             this.labelFirmwareGUIDValue.AutoSize = true;
             this.labelFirmwareGUIDValue.BackColor = System.Drawing.Color.Transparent;
             this.labelFirmwareGUIDValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFirmwareGUIDValue.Location = new System.Drawing.Point(143, 73);
+            this.labelFirmwareGUIDValue.Location = new System.Drawing.Point(130, 73);
             this.labelFirmwareGUIDValue.Name = "labelFirmwareGUIDValue";
             this.labelFirmwareGUIDValue.Size = new System.Drawing.Size(0, 20);
             this.labelFirmwareGUIDValue.TabIndex = 12;
@@ -519,7 +518,7 @@
             this.labelDescriptionValue.AutoSize = true;
             this.labelDescriptionValue.BackColor = System.Drawing.Color.Transparent;
             this.labelDescriptionValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDescriptionValue.Location = new System.Drawing.Point(143, 39);
+            this.labelDescriptionValue.Location = new System.Drawing.Point(130, 39);
             this.labelDescriptionValue.Name = "labelDescriptionValue";
             this.labelDescriptionValue.Size = new System.Drawing.Size(0, 20);
             this.labelDescriptionValue.TabIndex = 10;
@@ -542,7 +541,7 @@
             this.labelVersionValue.AutoSize = true;
             this.labelVersionValue.BackColor = System.Drawing.Color.Transparent;
             this.labelVersionValue.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelVersionValue.Location = new System.Drawing.Point(143, 6);
+            this.labelVersionValue.Location = new System.Drawing.Point(130, 6);
             this.labelVersionValue.Name = "labelVersionValue";
             this.labelVersionValue.Size = new System.Drawing.Size(0, 20);
             this.labelVersionValue.TabIndex = 8;
@@ -589,7 +588,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 341);
+            this.ClientSize = new System.Drawing.Size(914, 341);
             this.Controls.Add(this.tableLayoutPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(930, 380);
@@ -597,6 +596,8 @@
             this.Text = "HEX uploader";
             this.tableLayoutPanel.ResumeLayout(false);
             this.panelInformation.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             this.panelUpload.ResumeLayout(false);
@@ -606,11 +607,9 @@
             this.panelHexInfo.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelUploadControls.ResumeLayout(false);
             this.panelUploadProgress.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,7 +641,6 @@
         private CustomControls.CustomLabel labelFirmwareGUIDValue;
         private CustomControls.CustomLabel labelFirmwareGUID;
         private CustomControls.CustomButton btnUploadHex;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Panel panelUploadControls;
         private System.Windows.Forms.Panel panelUploadProgress;
         private System.Windows.Forms.ProgressBar progressBar1;

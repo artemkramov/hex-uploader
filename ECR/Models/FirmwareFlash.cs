@@ -7,6 +7,10 @@ using System.Text;
 
 namespace ECR.Models
 {
+
+    /// <summary>
+    /// Entity for method '/cgi/fw_burn'
+    /// </summary>
     class FirmwareFlash : Entity
     {
 
